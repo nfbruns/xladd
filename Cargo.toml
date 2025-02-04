@@ -10,15 +10,15 @@ repository = "https://github.com/ronniec95/xladd"
 version = "0.4.2"
 
 [features]
-default = []
-use_ndarray = ["ndarray"]
+default = ["use_ndarray"]
+use_ndarray = ["dep:ndarray"]
 
 [dependencies]
 bincode = "^1"
 lazy_static = "1.4.0"
 log = "0.4.8"
-ndarray = {version = "^0.14", optional = true}
+ndarray = { version = "^0.16.1", optional = true }
 serde = "^1"
 serde_derive = "^1"
 widestring = "*"
-winapi = {version = "*", features = ["winuser", "libloaderapi", "debugapi"]}
+winapi = { version = "*", features = ["winuser", "libloaderapi", "debugapi"] }
