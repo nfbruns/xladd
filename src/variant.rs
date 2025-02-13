@@ -69,6 +69,14 @@ impl Variant {
         self.0.xltype & xltypeMask == xltypeMissing || self.0.xltype & xltypeMask == xltypeNil
     }
 
+    pub fn is_missing(&self) -> bool {
+        self.0.xltype & xltypeMask == xltypeMissing
+    }
+
+    pub fn is_null(&self) -> bool {
+        self.0.xltype & xltypeMask == xltypeNil
+    }
+
     /// Construct a variant containing an error. This is used in Excel to represent standard errors
     /// that are shown as #DIV0 etc. Currently supported error codes are:
     /// xlerrNull, xlerrDiv0, xlerrValue, xlerrRef, xlerrName, xlerrNum, xlerrNA, xlerrGettingData
