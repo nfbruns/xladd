@@ -972,10 +972,7 @@ impl From<Array2<String>> for Variant {
         // Return as a Variant
         let mut array = arr
             .iter()
-            .map(|v| match v {
-                v if v.is_empty() => Variant::from_err(xlerrNA),
-                v => Variant::from(v.as_str()),
-            })
+            .map(|v| Variant::from(v.as_str()))
             .collect::<Vec<_>>();
         let rows = arr.nrows();
         let columns = arr.ncols();
