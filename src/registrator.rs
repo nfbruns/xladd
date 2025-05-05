@@ -77,7 +77,10 @@ impl Reg {
             Variant::from(1), // type 1 means useable anywhere (spreadsheet or macro code)
             Variant::from(category),
             Variant::missing(), // no shortcut
-            Variant::missing(), // no help url for now. If we add it, it needn't mean another argument to add
+            Variant::from(format!(
+                "https://efslogic.efs.consulting/functions/{}!0",
+                name.to_lowercase()
+            )),
             Variant::from(help_text),
         ];
 
